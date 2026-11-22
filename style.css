@@ -2,3 +2,41 @@
 .loading-status{background:#fff;border:1px solid #dce5eb;border-radius:10px;padding:12px 20px;margin-bottom:24px}.loading-status #status{margin:0;background:transparent;padding:6px 0}.loading-status details{font-size:.9rem;color:#526478}
 
 .section-heading{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:14px}.section-heading h2{margin:0}.section-heading button{margin:0;white-space:nowrap}
+
+/* ---------- 추가: 분류 선택 · 충격 유형 진단 ---------- */
+:root{--t-double:#eb6834;--t-import:#2a78d6;--t-export:#1baf7a;--t-stable:#a3a29c;--ink2:#526478}
+header p strong{color:#ffd9a8}
+.level-buttons{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px}
+.level-buttons button{margin:0;padding:14px;text-align:left;background:#fff;color:#123b50;border:2px solid #9fb4c2;font-weight:700}
+.level-buttons button small{display:block;font-weight:400;color:var(--ink2)}
+.level-buttons button.active{background:#145c70;color:#fff;border-color:#145c70}.level-buttons button.active small{color:#d6e7ec}
+.level-tag{font-size:.95rem;font-weight:600;color:var(--ink2);margin-left:6px}
+.type-cards{margin:16px 0}
+.type-card{margin:0;text-align:left;background:#fff;color:#172d42;border:1px solid #dce5eb;border-left:6px solid var(--c);border-radius:8px;padding:12px 14px}
+.type-card.on{background:#f3f7fa;box-shadow:0 0 0 2px var(--c) inset}
+.type-card .type-name{font-weight:700}.type-card strong{display:block;font-size:1.5rem}.type-card .type-desc{font-size:.85rem;color:var(--ink2)}
+.chart-wrap{position:relative;margin-top:8px}
+.legend{display:flex;flex-wrap:wrap;gap:14px;font-size:.9rem;color:#334155;margin-bottom:6px}
+.legend-item::before,.type-chip::before{content:"";display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--c);margin-right:6px;vertical-align:middle}
+.scatter svg{width:100%;height:auto;display:block;background:#fcfcfb;border:1px solid #e5eaee;border-radius:8px}
+.quad{fill:transparent}.quad-label{font-size:13px;font-weight:700;fill:#8a96a3;paint-order:stroke;stroke:#fcfcfb;stroke-width:4px}
+.grid{stroke:#e9eef2;stroke-width:1}.tick{font-size:11px;fill:#64748b}.axis-title{font-size:12.5px;fill:#334155;font-weight:600}
+.cut{stroke:#64748b;stroke-width:1.2;stroke-dasharray:5 4}.cut-label{font-size:11px;fill:#475569}
+.dot{stroke:#fff;stroke-width:1.5;cursor:pointer;transition:opacity .15s}.dot:hover,.dot:focus{stroke:#0b0b0b;stroke-width:2;outline:none}
+.dot.dim{opacity:.15}.dot.sel{stroke:#0b0b0b;stroke-width:2.5}
+.sel-label{font-size:13px;font-weight:700;fill:#0b0b0b;paint-order:stroke;stroke:#fff;stroke-width:4px}
+.tooltip{position:absolute;pointer-events:none;background:#fff;border:1px solid #cbd5e1;border-radius:6px;padding:8px 10px;font-size:.85rem;box-shadow:0 4px 14px rgba(0,0,0,.12);max-width:220px;z-index:5}
+.tooltip b,.tooltip span{display:block}.tooltip span{color:var(--ink2)}
+.detail{margin:18px 0;padding:18px;border:1px solid #dce5eb;border-left:6px solid var(--c);border-radius:10px;background:#fbfdfe}
+.detail h3{margin:0 0 6px}.badge{font-size:.8rem;padding:2px 8px;border-radius:999px;background:var(--c);color:#fff;vertical-align:middle}
+.metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;margin:12px 0}
+.metrics div{background:#eef4f7;border-radius:8px;padding:10px}.metrics span{display:block;font-size:.85rem;color:var(--ink2)}.metrics strong{font-size:1.15rem}
+.controls{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:0 14px}
+#diag-rows tr{cursor:pointer}#diag-rows tr:hover{background:#f3f7fa}#diag-rows tr.sel{background:#fff4e6}
+td{font-variant-numeric:tabular-nums}.type-chip{white-space:nowrap}
+.fill.neg{background:#b45309}
+.unit{font-weight:600;color:#145c70}
+.method dt{font-weight:700;margin-top:14px}.method dd{margin:4px 0 0 0;color:#334155}
+#diagnosis .scroll table{min-width:860px}
+@media(max-width:600px){.type-cards{grid-template-columns:1fr 1fr}.type-card strong{font-size:1.2rem}.type-card .type-desc{display:none}
+.scatter{overflow-x:auto}.scatter svg{min-width:640px}}
